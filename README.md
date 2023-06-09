@@ -1,4 +1,4 @@
-#  <img src="docs/figures/icon.svg" width=20> TwinGraph
+#  <img src="docs/figures/icon.svg#gh-light-mode-only" media="(prefers-color-scheme: light)" width=20><img src="docs/figures/icon.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)" width=20> TwinGraph
 
 TwinGraph provides a Python framework for high-throughput container orchestration for simulation, statistical predictive modeling and optimization workflows, including (a) asynchronized multi-host compute through (b) dynamic directed-acyclic-graph pipelines and (c) recording custom workflow attributes/artifacts within a graph database for repeatability and auditability. 
 
@@ -11,24 +11,9 @@ It is designed to scale up to hundreds of thousands of containerized compute tas
 
 There are a number of key capabilities outlined in the following graphic for TwinGraph. Instead of domain specific language (DSL) for specifying pipelines, TwinGraph simply uses plain Python algorithms (loops, conditionals & recursion) in a dynamic manner, i.e. dependencies of graph structure on intermediate outputs and runtime stochasticity.
 
-<img src="docs/figures/Picture1.png#gh-light-mode-only" width=200>
-<img src="docs/figures/Picture1_dark.svg#gh-dark-mode-only" width=200>
+<img src="docs/figures/Picture1.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture2.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture3.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture4.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture6.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture8.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200>
 
-<img src="docs/figures/Picture2.png#gh-light-mode-only" width=200>
-<img src="docs/figures/Picture2_dark.svg#gh-dark-mode-only" width=200>
-
-<img src="docs/figures/Picture3.png#gh-light-mode-only" width=200>
-<img src="docs/figures/Picture3_dark.svg#gh-dark-mode-only" width=200>
-
-<img src="docs/figures/Picture4.png#gh-light-mode-only" width=200>
-<img src="docs/figures/Picture4_dark.svg#gh-dark-mode-only" width=200>
-
-<img src="docs/figures/Picture6.png#gh-light-mode-only" width=200>
-<img src="docs/figures/Picture6_dark.svg#gh-dark-mode-only" width=200>
-
-<img src="docs/figures/Picture8.png#gh-light-mode-only" width=200>
-<img src="docs/figures/Picture8_dark.svg#gh-dark-mode-only" width=200>
-
+<img src="docs/figures/Picture1_dark.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)" width=200><img src="docs/figures/Picture2_dark.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)" width=200><img src="docs/figures/Picture3_dark.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)"  width=200><img src="docs/figures/Picture4_dark.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)" width=200><img src="docs/figures/Picture6_dark.svg#gh-dark-mode-only"  media="(prefers-color-scheme: dark)"  width=200><img src="docs/figures/Picture8_dark.svg#gh-dark-mode-only"  media="(prefers-color-scheme: dark)"  width=200>
 
 
 The examples highlighted in the next section provide an overview of the capabilities of TwinGraph.
