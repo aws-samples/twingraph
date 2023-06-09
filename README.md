@@ -7,11 +7,11 @@ TwinGraph provides the capability to add decorators to Python functions, to reco
 
 It is designed to scale up to hundreds of thousands of containerized compute tasks in a number of different compute nodes/hosts with seamless communication of information between tasks in an event-driven workflow chain. An example architectural flow of information is shown in the picture below. 
 
-<img src="docs/figures/OverallPicture.png" width=600>
+<img src="docs/figures/OverallPicture.png" width=780>
 
 There are a number of key capabilities outlined in the following graphic for TwinGraph. Instead of domain specific language (DSL) for specifying pipelines, TwinGraph simply uses plain Python algorithms (loops, conditionals & recursion) in a dynamic manner, i.e. dependencies of graph structure on intermediate outputs and runtime stochasticity.
 
-<img src="docs/figures/Challenges.png" width=600>
+<img src="docs/figures/Challenges.png" width=780>
 
 The examples highlighted in the next section provide an overview of the capabilities of TwinGraph.
 
