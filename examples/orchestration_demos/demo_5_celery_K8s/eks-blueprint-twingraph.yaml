@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-blueprint-twingraph-deployment
+  namespace: eks-blueprint-twingraph
+  labels:
+    app: eks-blueprint-twingraph-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eks-blueprint-twingraph-app
+  template:
+    metadata:
+      labels:
+        app: eks-blueprint-twingraph-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+                - arm64
+      containers:
+      - name: demo1
+        image: <AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo1:latest
+        ports:
+        - name: http
+          containerPort: 80
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        kubernetes.io/os: linux

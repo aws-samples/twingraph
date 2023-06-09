@@ -1,0 +1,7 @@
+{
+    "region_name": "<AWS-REGION-ID>",
+    "jobQueue": "twingraph-run-queue",
+    "logGroupName": "/aws/batch/job",
+    "vCPU": 1,
+    "Mem": 2048
+}

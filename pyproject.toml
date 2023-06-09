@@ -1,0 +1,75 @@
+[tool.poetry]
+name = "twingraph"
+description = "This package provides tools for predictive modeling workflows, including (a) infrastructure provisioning, (b) graph orchestration and (c) recording workflow artifacts for repeatability and auditability."
+version = "1.0.0"
+license = "MIT0"
+
+authors = []
+
+readme = "README.md"
+
+repository = "https://github.com/aws-samples/twingraph"
+
+keywords = []
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+boto3 = "^1.26.45"
+gremlinpython = "^3.6.1"
+numpy = "^1.24.1"
+docker = "^6.0.1"
+celery = "^5.2.7"
+flower = "^1.2.0"
+simplejson = "^3.18.1"
+kombu = "^5.2.4"
+pep8 = "^1.7.1"
+redis = "^4.4.2"
+kubernetes = "^25.3.0"
+nest-asyncio = "^1.5.6"
+pandas = "^2.0.2"
+m2r2 = "^0.3.3.post2"
+sphinx-autodoc-typehints = "^1.23.0"
+sphinx-markdown-builder = "^0.5.5"
+pdoc = "^13.1.1"
+pytest = "^7.3.1"
+gitpython = "^3.1.31"
+
+[tool.poetry.group.test.dependencies]
+mypy = "^0.982"
+
+wemake-python-styleguide = "^0.17"
+flake8-pytest-style = "^1.6"
+doc8 = "^1.0"
+nitpick = "^0.32"
+
+safety = "^2.3"
+
+pytest = "^7.1"
+pytest-cov = "^4.0"
+pytest-randomly = "^3.12"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx-autodoc-typehints = "^1.19"
+m2r2 = "^0.3"
+tomli = "^2.0"
+
+
+
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.nitpick]
+style = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/nitpick-style-wemake.toml"

@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+
+  twingraph:
+    depends_on:
+      - tinkergraph-server
+      - rabbitmq
+      - redis-stack
+    build: .
+    image: twingraph:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    command: ["bash", "-c", "sudo chmod 777 /var/run/docker.sock; while true; do date; sleep 10; done"]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${HOME}/.aws:/home/twingraph-user/.aws
+
+  tinkergraph-server:
+    image: tinkerpop/gremlin-server:3.6.1
+  
+  tinkergraph-viz:
+    image: prabushitha/gremlin-visualizer:latest
+    ports:
+      - 3000:3000
+      - 3001:3001
+
+  rabbitmq:
+    image: rabbitmq:latest
+
+  redis-stack:
+    image: redis/redis-stack:latest
+    ports:
+      - 6379:6379
+      - 8001:8001
+
+    
