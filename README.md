@@ -1,15 +1,14 @@
 #  <img src="docs/figures/icon.svg#gh-light-mode-only" media="(prefers-color-scheme: light)" width=20><img src="docs/figures/icon.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)" width=20> TwinGraph
 
-TwinGraph provides a Python framework for high-throughput container orchestration for simulation, statistical predictive modeling and optimization workflows, including (a) asynchronized multi-host compute through (b) dynamic directed-acyclic-graph pipelines and (c) recording custom workflow attributes/artifacts within a graph database for repeatability and auditability. 
+TwinGraph provides a Python-based high-throughput container orchestration framework for simulation, predictive modeling and optimization workflows. It supports asynchronous multi-host computing, dynamic directed-acyclic-graph (DAG) pipelines, and recording of custom workflow artifacts and attributes within a graph database, for repeatability and auditability.
 
+TwinGraph is used by adding decorators to Python functions to record attributes associated with these functions, such as inputs/outputs, source code and compute platform in a [TinkerGraph](https://tinkerpop.apache.org/docs/current/reference/) or [Amazon Neptune](https://aws.amazon.com/neptune/) database. It is also optionally a graph orchestrator using [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) in the backend and runs the decorated functions on a chosen compute ([AWS Batch](https://aws.amazon.com/batch/), [AWS Lambda](https://aws.amazon.com/lambda/), [Amazon EKS](https://aws.amazon.com/eks/)) and software platform ([K8s](https://kubernetes.io/), [Docker Compose](https://docs.docker.com/compose/)) in an asynchronous manner.
 
-TwinGraph provides the capability to add decorators to Python functions, to record them in a [TinkerGraph](https://tinkerpop.apache.org/docs/current/reference/) or [Amazon Neptune](https://aws.amazon.com/neptune/) database. It is also optionally a graph orchestrator using [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) in the backend and runs the decorated functions on a chosen compute ([AWS Batch](https://aws.amazon.com/batch/), [AWS Lambda](https://aws.amazon.com/lambda/), [Amazon EKS](https://aws.amazon.com/eks/)) and software platform ([K8s](https://kubernetes.io/), [Docker Compose](https://docs.docker.com/compose/)) in an asynchronous manner. 
-
-It is designed to scale up to hundreds of thousands of containerized compute tasks in a number of different compute nodes/hosts with seamless communication of information between tasks in an event-driven workflow chain. An example architectural flow of information is shown in the picture below. 
+TwinGraph scales to hundreds of thousands of containerized compute tasks in a number of different compute nodes/hosts; communication of information between tasks is handled through message queues in an event-driven workflow chain. An example architectural flow of information is shown in the picture below:
 
 <img src="docs/figures/OverallPicture.png" width=780>
 
-There are a number of key capabilities outlined in the following graphic for TwinGraph. Instead of domain specific language (DSL) for specifying pipelines, TwinGraph simply uses plain Python algorithms (loops, conditionals & recursion) in a dynamic manner, i.e. dependencies of graph structure on intermediate outputs and runtime stochasticity.
+There are a number of key capabilities outlined in the following graphic for TwinGraph. Instead of domain specific language (DSL) for specifying pipelines, TwinGraph uses algorithms defined in native Python (loops, conditionals & recursion) to define the control flow, i.e. dependencies of graph structure on intermediate outputs and runtime stochasticity.
 
 <img src="docs/figures/Challenges.png" width=780>
 
@@ -95,7 +94,7 @@ poetry env remove <PATH-TO-PYTHON-EXE>
 
 ## (**OPTIONAL**) Installation Option 3: Manual Full Installation Steps & Using Poetry Env
 
-If you have any issues with the easy installation, and are not able to use Docker Compose, follow instructions [here](docs/ManualInstallation.md) for manually installing required packages and core modules of TwinGraph.
+If you have any issues with the quick installation, and are not able to use Docker Compose, follow instructions [here](docs/ManualInstallation.md) for manually installing required packages and core modules of TwinGraph.
 
 ## Port Forwarding
 

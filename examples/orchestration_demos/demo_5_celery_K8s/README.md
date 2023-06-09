@@ -69,7 +69,7 @@ Enable the registry addon
 minikube addons enable registry-creds
 ```
 
-## Option 2: Run k8s using AWS EKS - Easy Install
+## Option 2: Run k8s using AWS EKS - Quick Install
 Fill in the following information in per needs (remove the <>).
 ```bash
 export CLUSTER_NAME=<NAME-OF-CLUSTER>
