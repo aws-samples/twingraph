@@ -11,10 +11,7 @@ It is designed to scale up to hundreds of thousands of containerized compute tas
 
 There are a number of key capabilities outlined in the following graphic for TwinGraph. Instead of domain specific language (DSL) for specifying pipelines, TwinGraph simply uses plain Python algorithms (loops, conditionals & recursion) in a dynamic manner, i.e. dependencies of graph structure on intermediate outputs and runtime stochasticity.
 
-<img src="docs/figures/Picture1.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture2.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture3.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture4.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture6.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200><img src="docs/figures/Picture8.png#gh-light-mode-only" media="(prefers-color-scheme: light)" width=200>
-
-<img src="docs/figures/Picture1_dark.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)" width=200><img src="docs/figures/Picture2_dark.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)" width=200><img src="docs/figures/Picture3_dark.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)"  width=200><img src="docs/figures/Picture4_dark.svg#gh-dark-mode-only" media="(prefers-color-scheme: dark)" width=200><img src="docs/figures/Picture6_dark.svg#gh-dark-mode-only"  media="(prefers-color-scheme: dark)"  width=200><img src="docs/figures/Picture8_dark.svg#gh-dark-mode-only"  media="(prefers-color-scheme: dark)"  width=200>
-
+<img src="docs/figures/Challenges.png" width=600>
 
 The examples highlighted in the next section provide an overview of the capabilities of TwinGraph.
 
@@ -135,4 +132,4 @@ We welcome all contributions to improve the code, identify bugs and adopt best d
 
 ## Credits
 
-This open source framework was developed by the Autonomous Computing Team within Amazon Web Services (AWS) Worldwide Specialist Organization (WWSO), led by Vidyasagar Ananthan and Satheesh Maheswaran, with contributions from Cheryl Abundo on Amazon EKS Blueprints and Ross Pivovar on AWS Batch. The authors acknowledge and thank Adam Rasheed for his leadership and support to our team, and to Alex Iankoulski for his detailed guidance and contributions on Docker tools and expertise in reviewing the code.
+This open source framework was developed by the Autonomous Computing Team within Amazon Web Services (AWS) Worldwide Specialist Organization (WWSO), led by Vidyasagar Ananthan and Satheesh Maheswaran, with contributions from Cheryl Abundo on Amazon EKS Blueprints. The authors acknowledge and thank Adam Rasheed for his leadership and support to our team, and to Alex Iankoulski for his detailed guidance and contributions on Docker tools and expertise in reviewing the code.
