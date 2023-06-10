@@ -9,11 +9,16 @@ TwinGraph scales to hundreds of thousands of containerized compute tasks in a nu
 <img src="docs/figures/OverallPicture.png" width=780>
 Figure 1: Overall Information Flow
 </center>
+
+
 There are a number of key capabilities outlined in the following Figure 2 for TwinGraph. Instead of domain specific language (DSL) for specifying pipelines, TwinGraph uses algorithms defined in native Python (loops, conditionals & recursion) to define the control flow, i.e. dependencies of graph structure on intermediate outputs and runtime stochasticity.
+
 <center>
 <img src="docs/figures/Challenges.png" width=780>
 Figure 2: Challenges in Designing Orchestrators
 </center>
+
+
 The examples highlighted in the next section provide an overview of the capabilities of TwinGraph.
 
 ### Supported Operating Systems:
