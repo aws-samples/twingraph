@@ -17,6 +17,8 @@ The examples highlighted in the next section provide an overview of the capabili
 ### Supported Operating Systems:
 * Linux
     * Amazon Linux 2, Centos 7, RHEL, Fedora, Ubuntu, etc.
+* Other Operating Systems
+    * Please use the Docker Compose installation option
 
 ## API Documentation
 
