@@ -2,16 +2,18 @@
 
 TwinGraph provides a Python-based high-throughput container orchestration framework for simulation, predictive modeling and optimization workflows. It supports asynchronous multi-host computing, dynamic directed-acyclic-graph (DAG) pipelines, and recording of custom workflow artifacts and attributes within a graph database, for repeatability and auditability.
 
-TwinGraph is used by adding decorators to Python functions to record attributes associated with these functions, such as inputs/outputs, source code and compute platform in a [TinkerGraph](https://tinkerpop.apache.org/docs/current/reference/) or [Amazon Neptune](https://aws.amazon.com/neptune/) database. It is also optionally a graph orchestrator using [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) in the backend and runs the decorated functions on a chosen compute ([AWS Batch](https://aws.amazon.com/batch/), [AWS Lambda](https://aws.amazon.com/lambda/), [Amazon EKS](https://aws.amazon.com/eks/)) and software platform ([K8s](https://kubernetes.io/), [Docker Compose](https://docs.docker.com/compose/)) in an asynchronous manner.
+TwinGraph is used by adding decorators to Python functions to record attributes associated with these functions, such as inputs/outputs, source code and compute platform in a [TinkerGraph](https://tinkerpop.apache.org/docs/current/reference/) or [Amazon Neptune](https://aws.amazon.com/neptune/) database. It is also optionally a graph orchestrator using [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) in the backend and runs the decorated functions on a chosen compute ([AWS Batch](https://aws.amazon.com/batch/), [AWS Lambda](https://aws.amazon.com/lambda/), [Amazon EKS](https://aws.amazon.com/eks/)) and container orchestrator (Kubernetes, Docker Compose) ([Kubernetes](https://kubernetes.io/), [Docker Compose](https://docs.docker.com/compose/)) in an asynchronous manner.
 
-TwinGraph scales to hundreds of thousands of containerized compute tasks in a number of different compute nodes/hosts; communication of information between tasks is handled through message queues in an event-driven workflow chain. An example architectural flow of information is shown in the picture below:
-
+TwinGraph scales to hundreds of thousands of containerized compute tasks in a number of different compute nodes/hosts; communication of information between tasks is handled through message queues in an event-driven workflow chain. An example architectural flow of information is shown in Figure 1:
+<center>
 <img src="docs/figures/OverallPicture.png" width=780>
-
-There are a number of key capabilities outlined in the following graphic for TwinGraph. Instead of domain specific language (DSL) for specifying pipelines, TwinGraph uses algorithms defined in native Python (loops, conditionals & recursion) to define the control flow, i.e. dependencies of graph structure on intermediate outputs and runtime stochasticity.
-
+Figure 1: Overall Information Flow
+</center>
+There are a number of key capabilities outlined in the following Figure 2 for TwinGraph. Instead of domain specific language (DSL) for specifying pipelines, TwinGraph uses algorithms defined in native Python (loops, conditionals & recursion) to define the control flow, i.e. dependencies of graph structure on intermediate outputs and runtime stochasticity.
+<center>
 <img src="docs/figures/Challenges.png" width=780>
-
+Figure 2: Challenges in Designing Orchestrators
+</center>
 The examples highlighted in the next section provide an overview of the capabilities of TwinGraph.
 
 ### Supported Operating Systems:
@@ -32,7 +34,7 @@ There are a series of examples located in the examples/orchestration_demos folde
 | Example        | Description |
 | ----------- | ----------- |
 | [Demo 1](examples/orchestration_demos/demo_1_graph_tracing/README.md)        | Demonstrate graph tracing capability with local compute|
-| [Demo 2](examples/orchestration_demos/demo_2_docker/README.md)       | Building a Docker container & graph tracing with dockerized compute |
+| [Demo 2](examples/orchestration_demos/demo_2_docker/README.md)       | Building a Docker container & graph tracing with containerized (Docker) compute |
 | [Demo 3](examples/orchestration_demos/demo_3_git_data/README.md)         | Automatically including git history in traced attributes |
 | [Demo 4](examples/orchestration_demos/demo_4_celery_backend/README.md)      | Using Celery to dispatch tasks and perform asynchronous computing |
 | [Demo 5](examples/orchestration_demos/demo_5_celery_K8s/README.md)      | Using Celery to dispatch and run containerized tasks on Kubernetes (MiniK8s, EKS) |
@@ -129,6 +131,28 @@ We welcome all contributions to improve the code, identify bugs and adopt best d
 ## License
 
 [MIT-0](LICENSE)
+
+## References
+
+Tools used in this framework:
+* [Docker](https://docker.com)
+* [Docker Compose](https://docs.docker.com/compose/)
+* [Kubernetes](https://kubernetes.io)
+* [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html)
+* [Redis](https://redis.io/)
+* [RabbitMQ](https://rabbitmq.com/)
+* [Apache TinkerPop](https://tinkerpop.apache.org/docs/current/reference/#intro)
+
+AWS Resources:
+* [Amazon Web Services (AWS)](https://aws.amazon.com/)
+* [Amazon EC2](https://aws.amazon.com/ec2)
+* [AWS Lambda](https://aws.amazon.com/lambda/)
+* [Amazon Elastic Container Service (ECS)](https://aws.amazon.com/ecs)
+* [Amazon Elastic Kubernetes Service (EKS)](https://aws.amazon.com/eks)
+* [Amazon EKS Blueprints](https://aws-quickstart.github.io/cdk-eks-blueprints/)
+* [AWS Batch](https://aws.amazon.com/batch)
+* [Amazon Neptune](https://aws.amazon.com/neptune/)
+* [Amazon SQS](https://aws.amazon.com/sqs/)
 
 
 ## Credits
