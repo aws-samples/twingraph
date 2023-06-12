@@ -90,13 +90,18 @@ poetry env remove <PATH-TO-PYTHON-EXE>
 * Run Docker Compose, and open an interactive shell:
     ```bash
     docker compose up -d
+    ```
+    * *Note*: When running for the first time, ```compose``` might show error in the first line as the image does not exist yet, but this will be remedied automatically by the script building/pulling the container images.
+ 
+* Open an interactive shell to run the code, or develop within the container using VSCode [remote development](https://code.visualstudio.com/docs/remote/remote-overview) extension.
+    ```bash
     docker exec -it twingraph-twingraph-1 bash
     ```
 * Once completed, you can bring down all the containers:
     ```bash
     docker compose down
     ```
-* Note that when using Compose, TwinGraph API decorator variables need to point to Redis, Gremlin server and TwinGraph hosts - examples included in the provided [Dockerfile](Dockerfile) should run without any changes with the provided [Compose script](docker-compose.yaml); key in 'tinkergraph-server' instead of 'localhost' when using the Gremlin visualizer in the *host* field. 
+* *Note*: When using Compose, TwinGraph API decorator variables need to point to Redis, Gremlin server and TwinGraph hosts - examples included in the provided [Dockerfile](Dockerfile) should run without any changes with the provided [Compose script](docker-compose.yaml); key in 'tinkergraph-server' instead of 'localhost' when using the Gremlin visualizer in the *host* field. 
 * If using the provided [Dockerfile](Dockerfile) without Compose, please replace the ENV vars in lines 3-5 with localhost or the host where the other containers are running.
 
 ## (**OPTIONAL**) Installation Option 3: Manual Full Installation Steps & Using Poetry Env
@@ -160,4 +165,4 @@ AWS Resources:
 
 ## Credits
 
-This open source framework was developed by the Autonomous Computing Team within Amazon Web Services (AWS) Worldwide Specialist Organization (WWSO), led by Vidyasagar Ananthan and Satheesh Maheswaran, with contributions from Cheryl Abundo on Amazon EKS Blueprints. The authors acknowledge and thank Adam Rasheed for his leadership and support to our team, and to Alex Iankoulski for his detailed guidance and contributions on Docker tools and expertise in reviewing the code.
+This open source framework was developed by the Autonomous Computing Team within Amazon Web Services (AWS) Worldwide Specialist Organization (WWSO), led by Vidyasagar Ananthan and Satheesh Maheswaran, with contributions from Cheryl Abundo on Amazon EKS Blueprints, David Sauerwein on applications, and Ross Pivovar for initial testing and identifying issues. The authors acknowledge and thank Adam Rasheed for his leadership and support to our team, and to Alex Iankoulski for his detailed guidance and contributions on Docker tools and expertise in reviewing the code.
