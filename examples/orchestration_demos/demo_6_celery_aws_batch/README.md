@@ -18,7 +18,7 @@ Files
 
 1.    AWS CLI needs to be installed and configured (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
 2.    AWS Batch environment, job queues and definitions need to be configured (https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html)
-3.    Ensure that you have successfully executed `demo_1` example and pushed the container from this example to your Elastic Container Registry (ECR) using `push_to_ecr.py`  
+3.    Ensure that you have successfully executed `demo_2` example and pushed the container from this example to your Elastic Container Registry (ECR) using `push_to_ecr.py`  
 
 ## How to run the example
 
