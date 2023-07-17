@@ -18,7 +18,7 @@ Files
 
 1.    AWS CLI needs to be installed and configured (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
 2.    Kubernetes has to installed either using Minikube (https://minikube.sigs.k8s.io/docs/start/) if you intend to run locally, or AWS EKS Blueprint (https://aws-quickstart.github.io/cdk-eks-blueprints/) to run on AWS EKS
-3.    Ensure that you have successfully executed `demo_1` example and pushed the container from this example to your Elastic Container Registry (ECR) using `push_to_ecr.py`  
+3.    Ensure that you have successfully executed `demo_2` example and pushed the container from this example to your Elastic Container Registry (ECR) using `push_to_ecr.py`  
 
 ## Option 1: Run k8s locally using Minikube 
 Install and start Minikube with the steps below to be able to run the demo example in k8s locally
@@ -46,7 +46,7 @@ minikube dashboard
 ```
 Use the link provided after the dashboard launches
 
-Configure the registry credentials to be used by Minikube so it finds the image you pushed to AWS ECR when running demo_1
+Configure the registry credentials to be used by Minikube so it finds the image you pushed to AWS ECR when running demo_2
 ```bash
 minikube addons configure registry-creds
 

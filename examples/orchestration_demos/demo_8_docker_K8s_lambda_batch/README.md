@@ -17,7 +17,7 @@ Files
 
 1.    AWS CLI needs to be installed and configured (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
 2.    AWS Batch environment, job queues and definitions need to be configured (https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html)
-3.    Ensure that you have successfully executed `demo_1` and `demo_7` examples and pushed the containers to your Elastic Container Registry (ECR) using `push_to_ecr.py` in both those cases. 
+3.    Ensure that you have successfully executed `demo_2` and `demo_7` examples and pushed the containers to your Elastic Container Registry (ECR) using `push_to_ecr.py` in both those cases. 
 4.    Ensure that you have run the `demo_5` example with EKS or MiniKube see [here](../demo_5_celery_K8s/README.md).
 5.    Ensure that you have run the `demo_6` example to make sure AWS Batch is working see [here](../demo_6_celery_aws_batch/README.md).
 6.    Ensure that you have run the `demo_7` example to make sure AWS Lambda is working see [here](../demo_7_lambda/README.md).
