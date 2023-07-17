@@ -47,7 +47,7 @@ There are a series of examples located in the examples/orchestration_demos folde
 | [Demo 9](examples/orchestration_demos/demo_9_neptunedb/README.md)        | Using Amazon Neptune instead of TinkerGraph for graph tracing |
 | [Demo 10](examples/orchestration_demos/demo_10_multipipeline/README.md)        | Running multiple pipelines together |
 
-## Installation Option 1: Quick Installation
+## (Linux) Installation Option 1: Quick Installation
 
 ### Prerequisites Step (install [Make](https://www.gnu.org/software/make/), [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [Docker](https://docs.docker.com/engine/install/) and [Python](https://www.python.org/downloads/)):
 - RHEL/Centos/Fedora/AL2: 
@@ -81,7 +81,7 @@ make uninstall
 ```bash
 poetry env remove <PATH-TO-PYTHON-EXE>
 ```
-## (**OPTIONAL**) Installation Option 2: Running in Docker
+## (Mac & Windows) Installation Option 2: Running in Docker
 
 * Install and ensure [Docker](https://docs.docker.com/engine/install/) with the [Compose](https://docs.docker.com/compose/) tool is running:
     ```bash
@@ -101,7 +101,8 @@ poetry env remove <PATH-TO-PYTHON-EXE>
     ```bash
     docker compose down
     ```
-* *Note*: When using Compose, TwinGraph API decorator variables need to point to Redis, Gremlin server and TwinGraph hosts - examples included in the provided [Dockerfile](Dockerfile) should run without any changes with the provided [Compose script](docker-compose.yaml); key in 'tinkergraph-server' instead of 'localhost' when using the Gremlin visualizer in the *host* field. 
+* *Note*: When using Compose, TwinGraph API decorator variables need to point to Redis, Gremlin server and TwinGraph hosts - examples included in the provided [Dockerfile](Dockerfile) should run without any changes with the provided [Compose script](docker-compose.yaml)
+* Key in 'tinkergraph-server' instead of 'localhost' when using the Gremlin visualizer in the *host* field. 
 * If using the provided [Dockerfile](Dockerfile) without Compose, please replace the ENV vars in lines 3-5 with localhost or the host where the other containers are running.
 
 ## (**OPTIONAL**) Installation Option 3: Manual Full Installation Steps & Using Poetry Env

@@ -17,6 +17,8 @@
 
 - When using AWS Lambda, inputs/outputs have to be a limited size or the "extended_output" flag should be set to "True"; however this is not advisable for high concurrency tasks due to CloudWatch limitations.
 
+- When running with GPUs locally, the Docker option needs modification with resource sets for launch (this should work seamlessly for cloud deployments with number of GPUs specification for Batch and EKS)
+
 ## Issues
 
 - Auto-infer keyword does not work with Celery.
