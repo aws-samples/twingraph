@@ -7,7 +7,7 @@
 from twingraph.awsmodules.ecr.push_to_ecr import create_ecr_repo
 import os
 
-repositoryName='demo1'
+repositoryName='demo2'
 try:
     create_ecr_repo(repositoryName=repositoryName)
 except Exception as e:

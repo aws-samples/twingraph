@@ -4,7 +4,7 @@ TwinGraph provides a Python-based high-throughput container orchestration framew
 
 TwinGraph is used by adding decorators to Python functions to record attributes associated with these functions, such as inputs/outputs, source code and compute platform in a [TinkerGraph](https://tinkerpop.apache.org/docs/current/reference/) or [Amazon Neptune](https://aws.amazon.com/neptune/) database. It is also optionally a graph orchestrator using [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) in the backend and runs the decorated functions on a chosen compute ([AWS Batch](https://aws.amazon.com/batch/), [AWS Lambda](https://aws.amazon.com/lambda/), [Amazon EKS](https://aws.amazon.com/eks/)) and container orchestrator ([Kubernetes](https://kubernetes.io/), [Docker Compose](https://docs.docker.com/compose/)) in an asynchronous manner.
 
-TwinGraph scales to hundreds of thousands of containerized compute tasks in a number of different compute nodes/hosts; communication of information between tasks is handled through message queues in an event-driven workflow chain. An example architectural flow of information is shown in Figure 1:
+TwinGraph can be used to run a few concurrent or linked compute tasks, or scale up to hundreds of thousands of containerized compute tasks in a number of different compute nodes/hosts; communication of information between tasks is handled through message queues in an event-driven workflow chain. An example architectural flow of information is shown in Figure 1:
 <center>
 <img src="docs/figures/OverallPicture.png" width=780></center>
 <p align="center">Figure 1: Overall Information Flow.</p>
@@ -17,7 +17,7 @@ There are a number of key capabilities outlined in the following Figure 2 for Tw
 <p align="center">Figure 2: Challenges in Designing Orchestrators</p>
 
 
-The examples highlighted in the next section provide an overview of the capabilities of TwinGraph.
+The examples highlighted in the next section provide an overview of how to use TwinGraph.
 
 ### Supported Operating Systems:
 * Linux
@@ -66,14 +66,45 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 git clone https://github.com/aws-samples/twingraph.git
 ```
 ### Installation Step:
+
+Navigate to the TwinGraph folder, where the `Makefile` is located, and key in:
+
 ```bash
 make install
 make docker_containers_poetry
 ```
 *Note that this step might indicate some missing packages on some distributions, please remedy this by installing any missing base packages as indicated during the installation.*
 
+This `make install` command is run once during installation; the `make docker_containers_poetry` can be run every time the docker containers for message passing, graph recording or visualization need to be spun up. Specifically, in order to run the containers the following commands need to be used:
+
+```bash
+docker run -d -p 5672:5672 --name=rabbitmq rabbitmq
+docker run -d -p 8182:8182 --name=gremlin-server tinkerpop/gremlin-server:3.6.1
+docker run --rm -d --net=host --name=gremlin-visualizer prabushitha/gremlin-visualizer:latest
+docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+```
+Additionally, when using TwinGraph, ensure either that the TwinGraph environment is enabled using poetry:
+
+```bash
+poetry shell
+```
+
+Alternatively install the package in your own existing environment with the appropriate version, for which you can build first:
+
+```bash
+poetry build
+```
+
+Once it completes, activate your existing Python virtual environment (conda/venv) and install TwinGraph:
+
+```bash
+(existing-python-env) pip install dist/twingraph-*.whl
+```
+
 For users of Kubernetes and Amazon EKS, please also install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) and [eksctl](https://github.com/weaveworks/eksctl/blob/main/README.md#installation) separately, and optionally Kubernetes [dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) for monitoring and debugging.
+
 ### Uninstallation Step:
+Once again, inside the TwinGraph folder with `Makefile`, key in:
 ```bash
 make uninstall
 ```
@@ -87,17 +118,28 @@ poetry env remove <PATH-TO-PYTHON-EXE>
     ```bash
     docker info
     ```
-* Run Docker Compose, and open an interactive shell:
+* Clone/Download TwinGraph, and within the folder with `docker-compose.yaml` run Docker Compose, and open an interactive shell:
     ```bash
     docker compose up -d
     ```
     * *Note*: When running for the first time, ```compose``` might show error in the first line as the image does not exist yet, but this will be remedied automatically by the script building/pulling the container images.
  
-* Open an interactive shell to run the code, or develop within the container using VSCode [remote development](https://code.visualstudio.com/docs/remote/remote-overview) extension.
+* Open an interactive shell to run the code, or develop within the container using VSCode [remote development](https://code.visualstudio.com/docs/remote/remote-overview) extension (next point).
     ```bash
     docker exec -it twingraph-twingraph-1 bash
     ```
-* Once completed, you can bring down all the containers:
+* Please install VS Code development using the [remote containers](https://code.visualstudio.com/docs/devcontainers/containers) extension - it is advised for ease of use, together with the [Docker extension](https://code.visualstudio.com/docs/containers/overview) where you can attach a new session to running containers.
+
+The interactive Shell enables you to run and execute code, but will not persist once the containers are cleaned up. For this, please add a local folder (outside the container) to the `docker-compose.yaml` file after line 16 as follows:
+
+```yaml
+14    volumes:
+        ...
+17      - /LOCAL-FOLDER:/home/twingraph-user/DOCKER-FOLDER
+```
+It is then possible to work on local files outside of the container and use the container only to deploy them with TwinGraph.
+
+* Once completed, you can bring down all the containers (for this, open a shell *outside* the container, in the same folder where TwinGraph was downloaded or cloned where `docker-compose.yaml` resides):
     ```bash
     docker compose down
     ```

@@ -6,8 +6,8 @@ Files
 
 ---
 
-* components/component1.py: Defines a set of functions that works on the container demo1:latest
-* components/component2.py: Defines a set of functions that works on the container demo1:latest
+* components/component1.py: Defines a set of functions that works on the container demo2:latest
+* components/component2.py: Defines a set of functions that works on the container demo2:latest
 * attr.py: Meta data for the experiment/workflow
 * batchconfig.json: Batch configuration to specify region and job queue name 
 * deployment.py: Implementation of a selection of tasks to be run in the Docker container  

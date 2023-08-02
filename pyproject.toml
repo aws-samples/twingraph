@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "twingraph"
 description = "This package provides tools for predictive modeling workflows, including (a) infrastructure provisioning, (b) graph orchestration and (c) recording workflow artifacts for repeatability and auditability."
-version = "1.0.0"
+version = "0.1.0"
 license = "MIT0"
 
 authors = []

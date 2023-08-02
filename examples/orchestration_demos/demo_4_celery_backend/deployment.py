@@ -8,7 +8,7 @@ from typing import NamedTuple
 from twingraph import component, pipeline
 import json
 
-docker_id = 'demo1:latest'
+docker_id = 'demo2:latest'
 additional_attributes = json.load(open("attr.json", "r"))
 
 @component(docker_id=docker_id, additional_attributes=additional_attributes)

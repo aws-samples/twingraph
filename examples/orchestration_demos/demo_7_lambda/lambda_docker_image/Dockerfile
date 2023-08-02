@@ -1,7 +1,7 @@
 # Define custom function directory
 ARG FUNCTION_DIR="/function/"
 
-FROM public.ecr.aws/docker/library/python:buster as build-image
+FROM --platform=linux/amd64 public.ecr.aws/docker/library/python:buster as build-image
 
 # Include global arg in this stage of the build
 ARG FUNCTION_DIR
@@ -24,7 +24,7 @@ RUN pip install \
     --target ${FUNCTION_DIR} \
         awslambdaric
 
-FROM public.ecr.aws/docker/library/python:buster
+FROM --platform=linux/amd64 public.ecr.aws/docker/library/python:buster
 
 # Include global arg in this stage of the build
 ARG FUNCTION_DIR

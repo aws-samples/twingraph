@@ -3,7 +3,7 @@ from typing import NamedTuple
 from twingraph import component
 
 # 
-@component(kubernetes_task=True, docker_id='<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo1:latest', additional_attributes=json.load(open("attr.json", "r")))
+@component(kubernetes_task=True, docker_id='<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo2:latest', additional_attributes=json.load(open("attr.json", "r")))
 def Func_A(inp_1: int, inp_2: float) -> NamedTuple:
     import numpy as np
     inp_2 += np.random.random()
@@ -14,7 +14,7 @@ def Func_A(inp_1: int, inp_2: float) -> NamedTuple:
     return poutput(inp_1, output_1, [output_1 + np.random.random() for k in range(int(2e2))], [output_1 + np.random.random() for k in range(3)])
 
 
-@component(kubernetes_task=True, docker_id='<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo1:latest', additional_attributes=json.load(open("attr.json", "r")))
+@component(kubernetes_task=True, docker_id='<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo2:latest', additional_attributes=json.load(open("attr.json", "r")))
 def Func_B(inp_1: list, inp_2: float) -> NamedTuple:
     import numpy as np
     inp_2 += np.random.random()

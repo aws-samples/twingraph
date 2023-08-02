@@ -26,8 +26,8 @@ spec:
                 - amd64
                 - arm64
       containers:
-      - name: demo1
-        image: <AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo1:latest
+      - name: demo2
+        image: <AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo2:latest
         ports:
         - name: http
           containerPort: 80
