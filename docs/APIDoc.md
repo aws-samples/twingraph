@@ -181,7 +181,7 @@ The component function is intended to be used as a decorator on top of Python fu
     information needed to execute AWS Lambda tasks - information that
     can be passed include, for example: {"iam_role":
     "ROLE-ARN", "architecture": "x86_64","storage_size":
-    512, "region_name": "", "timeout": 900}. One additional parameter which allows for larger outputs for Lambda tasks is "extended_output" set to "True", however this can result in log collisions when retrieving outputs with high concurrency running the same function.* Defaults to {} - needs to
+    512,"memory_size": 512, "region_name": "", "timeout": 900}. One additional parameter which allows for larger outputs for Lambda tasks is "extended_output" set to "True", however this can result in log collisions when retrieving outputs with high concurrency running the same function.* Defaults to {} - needs to
     be specified explicitly with the lambda_task flag.
 
 -   graph_config (dict, optional): *This dictionary includes a

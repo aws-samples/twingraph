@@ -246,7 +246,7 @@ def set_AWS_ARN():
 
 def lambda_create_component(component_docker_ids, comp_name, lambda_config):
     lambd_functions.create_lambd_function(
-        comp_name, component_docker_ids, lambda_config['iam_role'], lambda_config['architecture'], lambda_config['storage_size'], lambda_config["timeout"])
+        comp_name, component_docker_ids, lambda_config['iam_role'], lambda_config['architecture'], lambda_config['storage_size'], lambda_config['memory_size'], lambda_config["timeout"])
 
 
 def batch_create_component(component_docker_ids, comp_name, batch_config):
