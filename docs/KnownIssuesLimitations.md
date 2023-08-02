@@ -26,3 +26,5 @@
 - When setting a large number of concurrent Celery workers (>512), there may be issues with parallel os file writes. 
 
 - Error messages printed by Celery when remote execution (Docker, AWS Batch, Kubernetes or AWS Lambda) may be misleading - please check the appropriate console page or Kubernetes admin panel to diagnose the issues correctly.
+
+- If you encounter an error message such as `Received unregistered task of type 'task'`  please be sure to clear pycache manually by deleting `__pycache__` folders or using a tool such as [pyclean](https://pypi.org/project/pyclean/) before running the deployment.

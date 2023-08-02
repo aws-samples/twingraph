@@ -55,6 +55,7 @@ Modify the ```lambdaconfig.json``` to include the role
     "iam_role": "arn:aws:iam::<AWS-ACCOUNT-ID>:role/<AWS-LAMBDA-ROLE-ID>",
     "architecture": "x86_64",
     "storage_size": 512,
+    "memory_size": 512,
     "region_name": "<AWS-REGION-ID>",
     "timeout": 900
 }

@@ -11,6 +11,7 @@ lambda_config = {
     "iam_role": "arn:aws:iam::<AWS-ACCOUNT-ID>:role/<LAMBDA-CLOUDWATCH-ROLE>",
     "architecture": "x86_64",
     "storage_size": 512,
+    "memory_size": 512,
     "region_name": "<AWS-REGION-ID>",
     "timeout": 900
 }

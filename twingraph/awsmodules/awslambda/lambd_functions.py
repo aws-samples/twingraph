@@ -18,7 +18,7 @@ def matching_parentheses(string):
     }
     return False if dc.get(-1) or op else dc
 
-def create_lambd_function(function_name, docker_image, iam_role, architecture, storage_size, timeout):
+def create_lambd_function(function_name, docker_image, iam_role, architecture, storage_size, memory_size, timeout):
     client = boto3.client('lambda')
     response = client.create_function(
         FunctionName=function_name,
@@ -27,6 +27,7 @@ def create_lambd_function(function_name, docker_image, iam_role, architecture, s
             'ImageUri': docker_image
         },
         Timeout=timeout,
+        MemorySize=memory_size,
         PackageType='Image',
         ImageConfig={
         },
