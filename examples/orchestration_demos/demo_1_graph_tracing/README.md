@@ -47,7 +47,7 @@ INFO:gremlinpython:Creating GraphTraversalSource.
 INFO:gremlinpython:closing DriverRemoteConnection with url 'ws://127.0.0.1:8182/gremlin'
 ```
 
-Open the local web browser and connect to the port 3000, and key in host *localhost* (or where the visualizer is running), port *8182* (or the port forwarded from the visualizer) and gremlin query *g.V()*, and click on *EXECUTE*:
+Open the local web browser and connect to the port 3000, and key in host *localhost* (or where the visualizer is running - for example, if you are running with the Docker installation option, type *tinkergraph-server* instead of *localhost*), port *8182* (or the port forwarded from the visualizer) and gremlin query *g.V()*, and click on *EXECUTE*:
 ```url
 https://localhost:3000
 ```
