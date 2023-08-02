@@ -40,6 +40,8 @@ sphinx-markdown-builder = "^0.5.5"
 pdoc = "^13.1.1"
 pytest = "^7.3.1"
 gitpython = "^3.1.31"
+aiohttp = "^3.8.5"
+certifi = "^2023.7.22"
 
 [tool.poetry.group.test.dependencies]
 mypy = "^0.982"
