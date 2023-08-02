@@ -55,7 +55,11 @@ python deployment.py
 
 
  
-If your tasks fail to launch on AWS Batch, ensure your Region ID and Job Queue Names are correct.  Additionally ensure that AWS Batch is able to run the `getting-started-wizard-job`.  If you are new to AWS Batch, we recommend that you use the wizard (https://<AWS-REGION-ID>.console.aws.amazon.com/batch/home?region=<AWS-REGION-ID>#wizard) to setup your AWS Batch environnement.  If your task fails to run on AWS Batch, you need clear your local celery task runners before attempting to launch a new AWS Batch job. This can be achieved by running the script as shown below 
+If your tasks fail to launch on AWS Batch, ensure your Region ID and Job Queue Names are correct. Additionally ensure that AWS Batch is able to run the `getting-started-wizard-job`.  Please ensure that your Batch instance role has sufficient IAM permissions to access other services such as Amazon CloudWatch, Elastic Container Registry, S3, etc.
+
+ If you are new to AWS Batch, we recommend that you use the wizard (https://<AWS-REGION-ID>.console.aws.amazon.com/batch/home?region=<AWS-REGION-ID>#wizard) to setup your AWS Batch environment.
+
+If your task fails to run on AWS Batch, you need clear your local celery task runners before attempting to launch a new AWS Batch job. This can be achieved by running the script as shown below 
 
 Change directory to the utilities to clean up:
 ```
