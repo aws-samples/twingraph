@@ -29,6 +29,15 @@ Do the following in the order listed below
 
 Read the Dockerfile, add any packages you wish to install.
 
+Ensure that you have [Docker](https://www.docker.com/), a container orchestration platform, running with 
+
+```bash
+docker info
+```
+
+Additionally, you can configure a credential helper per security best practices following documentation [here](https://docs.docker.com/engine/reference/commandline/login/#credentials-store).  
+
+
 Build the docker image
 ```bash
 python build_tag_docker.py 
