@@ -9,7 +9,7 @@ from twingraph import component, pipeline
 import json
 
 # In this demo, we will run the code in Docker containers
-docker_id = 'demo1:latest'
+docker_id = 'demo2:latest'
 # To demonstrate recording custom artifacts
 additional_attributes = json.load(open("attr.json", "r"))
 

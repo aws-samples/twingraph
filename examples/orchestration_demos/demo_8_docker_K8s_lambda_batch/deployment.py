@@ -7,7 +7,7 @@ from twingraph import component, pipeline
 import json 
 from typing import NamedTuple
 
-ecr_docker_id_1 = '<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo1:latest'
+ecr_docker_id_1 = '<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo2:latest'
 ecr_docker_id_7 = '<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo7:latest'
 standard_attributes = json.load(open("attr.json", "r"))
 lambda_config=json.load(open("lambdaconfig.json", "r"))

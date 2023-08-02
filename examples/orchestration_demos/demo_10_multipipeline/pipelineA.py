@@ -7,7 +7,7 @@ from typing import NamedTuple
 from twingraph import component, pipeline
 
 
-@component(docker_id='demo1:latest')
+@component(docker_id='demo2:latest')
 def Func_A(inp_1: int, inp_2: float) -> NamedTuple:
     import numpy as np
     inp_2+=np.random.random()
@@ -17,7 +17,7 @@ def Func_A(inp_1: int, inp_2: float) -> NamedTuple:
     return poutput(inp_1, output_1, [output_1+np.random.random() for k in range(25)], [output_1+np.random.random() for k in range(3)])
 
 
-@component(docker_id='demo1:latest')
+@component(docker_id='demo2:latest')
 def Func_B(inp_1: list, inp_2: float) -> NamedTuple:
     import numpy as np
     inp_2+=np.random.random()
@@ -27,7 +27,7 @@ def Func_B(inp_1: list, inp_2: float) -> NamedTuple:
     return poutput(inp_1, output_1)
 
 
-@component(docker_id='demo1:latest')
+@component(docker_id='demo2:latest')
 def Func_C(inp_1: str, inp_2: float) -> NamedTuple:
     import numpy as np
     inp_2+=np.random.random()
@@ -38,7 +38,7 @@ def Func_C(inp_1: str, inp_2: float) -> NamedTuple:
     return poutput(inp_1, output_1)
 
 
-@component(docker_id='demo1:latest')
+@component(docker_id='demo2:latest')
 def Func_D(inp_1: str, inp_2: float, inp_3: float, inp_4: float) -> NamedTuple:
     import numpy as np
     inp_2+=np.random.random()

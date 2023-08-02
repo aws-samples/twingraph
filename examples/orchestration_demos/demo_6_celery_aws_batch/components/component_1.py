@@ -2,7 +2,7 @@ import json
 from typing import NamedTuple
 from twingraph import component
 
-docker_id='<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo1:latest'
+docker_id='<AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com/demo2:latest'
 batch_config=json.load(open("batchconfig.json", "r"))
 additional_attributes=json.load(open("attr.json", "r"))
 

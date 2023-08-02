@@ -6,8 +6,8 @@ Files
 
 ---
 
-* components/component1.py: Defines a set of functions that works on the container demo1:latest
-* components/component2.py: Defines a set of functions that works on the container demo1:latest
+* components/component1.py: Defines a set of functions that works on the container demo2:latest
+* components/component2.py: Defines a set of functions that works on the container demo2:latest
 * attr.py: Meta data for the experiment/workflow
 * eks-blueprint-twingraph.yaml: k8s manifest to be used for option 2 deployment in AWS EKS
 * deployment.py: Implementation of a selection of tasks to be run in the Docker container  

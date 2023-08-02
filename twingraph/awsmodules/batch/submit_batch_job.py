@@ -104,9 +104,9 @@ def submit_job(logGroupName, jobName, jobQueue, jobDefinition, command, regionNa
 
     # jitter to avoid API flooding, time for cloudwatch to register
     try_id=0
-    max_retries=35
+    max_retries=350
     while wait and try_id<max_retries:
-        time.sleep(min(exponential_backoff(base_delay=1.5,exponent=1.1,try_id=try_id),900))  
+        time.sleep(min(exponential_backoff(base_delay=1.1,exponent=1.1,try_id=try_id),180))  
         try:
             describeJobsResponse = batch.describe_jobs(jobs=[jobId])
             status = describeJobsResponse['jobs'][0]['status']
@@ -151,10 +151,10 @@ def obtain_results(batch_config, cw_log_name):
     # jitter to avoid API flooding, time for cloudwatch to register
     obtainedOutputs = False
     try_id=0
-    max_retries=15
+    max_retries=25
     output_str = ''
     while obtainedOutputs == False and try_id<max_retries:
-        time.sleep(exponential_backoff(base_delay=2,exponent=1.2,try_id=try_id))
+        time.sleep(exponential_backoff(base_delay=1.2,exponent=1.2,try_id=try_id))
         try:
             cloudwatch = get_cloudwatch_client(batch_config['region_name'])
             response = cloudwatch.describe_log_streams(
@@ -167,15 +167,23 @@ def obtain_results(batch_config, cw_log_name):
                       'startTime': 0,
                       'startFromHead': True}
 
-            output_str = str(cloudwatch.get_log_events(
-                **kwargs)['events'][-1]['message'])
+            for i in range(len(cloudwatch.get_log_events(
+                **kwargs)['events'])):
+                
+                output_str = str(cloudwatch.get_log_events(
+                **kwargs)['events'][-i]['message'])
             
-            if ('outputs' in output_str):
-                obtainedOutputs = True 
+                if ('outputs(' in output_str):
+                    obtainedOutputs = True 
+                    break
         except Exception as e:
             #print('obtain results Try '+str(try_id),e)
             pass
         
         try_id+=1
+        
+    if try_id>=max_retries-1:
+        print('Batch job succeeded but unable to retrieve logs from Cloudwatch - please check on the Console.')
+        os.system("pkill -9 -f 'celerytasks'")
         
     return output_str
