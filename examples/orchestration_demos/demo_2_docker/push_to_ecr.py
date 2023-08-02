@@ -11,7 +11,8 @@ repositoryName='demo2'
 try:
     create_ecr_repo(repositoryName=repositoryName)
 except Exception as e:
-    print(e)
+    #print(e)
+    pass
 
 os.system('aws ecr get-login-password --region <AWS-REGION-ID> | docker login --username AWS --password-stdin <AWS-ACCOUNT-ID>.dkr.ecr.<AWS-REGION-ID>.amazonaws.com')
 

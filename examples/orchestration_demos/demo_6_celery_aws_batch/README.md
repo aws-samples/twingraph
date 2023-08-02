@@ -43,11 +43,13 @@ Modify the `batchconfig.json` to reflect your chosen region and queue name and o
     "vCPU": 1,
     "Mem": 2048
 }
-
-An AWS Batch queue/compute environment needs to be set up before this example can be executed
-Remember to modify the `jobQueue` variable to your choice of the AWS Batch queue name.  
-
 ```
+
+An AWS Batch queue/compute environment needs to be set up before this example can be executed. For this initial demo, please set up the compute environment and queue to be 'EC2/ECS'. Fargate options require Role ARN and other information to be passed in as parameters (see [API](../../../docs/APIDoc.md) documentation) and EKS on Batch is not currently supported, please use plain EKS example instead from [Demo 5](../demo_5_celery_K8s/README.md).
+
+Remember to modify the `jobQueue` variable in the above json script to your choice of the AWS Batch queue name.  
+
+
 Run the orchestration pipeline
 ```bash
 python deployment.py 
