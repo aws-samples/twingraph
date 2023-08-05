@@ -77,7 +77,7 @@ make docker_containers_poetry
 
 This `make install` and the `make docker_containers_poetry` commands are run once to setup the environment for message passing, graph recording or visualization. 
 
-After installing and running TwinGraph the first time, for subsequent usage, if the docker socket is restarted or the containers are no longer running, you can use the convenience script provided to restart the containers:
+After installing and running TwinGraph the first time, for subsequent usage, if the docker socket is restarted or the containers are no longer running, you can use the convenience script provided to restart the containers (*this will also prune stopped containers*):
 
 ```bash
 sh start_containers.sh
