@@ -75,24 +75,24 @@ make docker_containers_poetry
 ```
 *Note that this step might indicate some missing packages on some distributions, please remedy this by installing any missing base packages as indicated during the installation.*
 
-This `make install` command is run once during installation; the `make docker_containers_poetry` can be run every time the docker containers need to be started up for message passing, graph recording or visualization.
+This `make install` and the `make docker_containers_poetry` commands are run once to setup the environment for message passing, graph recording or visualization. 
 
-Alternatively, in order to kick off the containers when running TwinGraph (assuming they are not already running, e.g. after a restart, and stopped containers are removed with `docker container prune`), the following commands can to be used in place of `make docker_containers_poetry` after the first run:
+After installing and running TwinGraph the first time, for subsequent usage, if the docker socket is restarted or the containers are no longer running, you can use the convenience script provided to restart the containers:
 
 ```bash
-docker run -d -p 5672:5672 --name=rabbitmq rabbitmq
-docker run -d -p 8182:8182 --name=gremlin-server tinkerpop/gremlin-server:3.6.1
-docker run --rm -d --net=host --name=gremlin-visualizer prabushitha/gremlin-visualizer:latest
-docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+sh start_containers.sh
 ```
 
-Additionally, when using TwinGraph, ensure either that the TwinGraph environment is enabled using poetry,
+*Note* If the containers are already running, this will throw an error when trying to start the containers - you only need one instantiation/container of each image running at a time for most use cases.
+
+
+Additionally, when using TwinGraph, ensure either that the TwinGraph environment is enabled using poetry, which has it installed:
 
 ```bash
 poetry shell
 ```
 
-or install the package in your own existing environment with the appropriate version, for which you can build first:
+Alternatively install the package in your own existing environment with the appropriate version, for which you can build first:
 
 ```bash
 poetry build
