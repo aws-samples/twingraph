@@ -39,7 +39,7 @@ sphinx-autodoc-typehints = "^1.23.0"
 sphinx-markdown-builder = "^0.5.5"
 pdoc = "^13.1.1"
 pytest = "^7.3.1"
-gitpython = "^3.1.37"
+gitpython = "^3.1.41"
 aiohttp = "^3.8.5"
 certifi = "^2023.7.22"
 
