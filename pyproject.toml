@@ -40,7 +40,7 @@ sphinx-markdown-builder = "^0.5.5"
 pdoc = "^14.5.1"
 pytest = "^7.3.1"
 gitpython = "^3.1.41"
-aiohttp = "^3.9.0"
+aiohttp = "^3.9.4"
 certifi = "^2023.7.22"
 
 [tool.poetry.group.test.dependencies]
